@@ -3,12 +3,11 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-chrome_cfg = Options()
-chrome_cfg.add_argument('--no-sandbox')  # Bypass OS security model
-chrome_cfg.add_argument('--disable-gpu')  # applicable to windows os only
-chrome_cfg.add_argument('start-maximized')
+
+chrome_cfg = webdriver.ChromeOptions()
+chrome_cfg.add_argument('--headless')
 browser = webdriver.Chrome(
-    chrome_options=chrome_cfg, executable_path=r'C:\chromedriver\chromedriver.exe')
+    executable_path=r'C:\chromedriver\chromedriver.exe', options=chrome_cfg)
 
 class TestAbs(unittest.TestCase):
 
@@ -38,3 +37,4 @@ class TestAbs(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+    browser.exit
