@@ -14,59 +14,27 @@ class TestAbs(unittest.TestCase):
 
     def test1(self):
         browser.get("http://suninjuly.github.io/registration1.html")
-        input1 = browser.find_element_by_xpath('//div[@class="first_block"]/div[@class="form-group first_class"]/input')
-        input1.send_keys("Vitaly")
-        input2 = browser.find_element_by_xpath('//div[@class="first_block"]/div[@class="form-group second_class"]/input')
-        input2.send_keys("Nepochatyh")
-        input3 = browser.find_element_by_xpath('//div[@class="first_block"]/div[@class="form-group third_class"]/input')
-        input3.send_keys("leedno@gmail.com")
-        input4 = browser.find_element_by_xpath('//div[@class="second_block"]/div[@class="form-group first_class"]/input')
-        input4.send_keys("89099099090")
-        input5 = browser.find_element_by_xpath('//div[@class="second_block"]/div[@class="form-group second_class"]/input')
-        input5.send_keys("ul.Pushkina d.Kolotushkina")
-            # Отправляем заполненную форму
-        button = browser.find_element_by_css_selector("button.btn")
-        button.click()
-
-        # Проверяем, что смогли зарегистрироваться
-        # ждем загрузки страницы
+        browser.find_element_by_xpath('//div[@class="first_block"]/div[@class="form-group first_class"]/input').send_keys("Vitaly")
+        browser.find_element_by_xpath('//div[@class="first_block"]/div[@class="form-group second_class"]/input').send_keys("Nepochatyh")
+        browser.find_element_by_xpath('//div[@class="first_block"]/div[@class="form-group third_class"]/input').send_keys("leedno@gmail.com")
+        browser.find_element_by_xpath('//div[@class="second_block"]/div[@class="form-group first_class"]/input').send_keys("89099099090")
+        browser.find_element_by_xpath('//div[@class="second_block"]/div[@class="form-group second_class"]/input').send_keys("ul.Pushkina d.Kolotushkina")
+        browser.find_element_by_css_selector("button.btn").click()
         time.sleep(1)
-
-        # находим элемент, содержащий текст
-        welcome_text_elt = browser.find_element_by_tag_name("h1")
-        # записываем в переменную welcome_text текст из элемента welcome_text_elt
-        welcome_text = welcome_text_elt.text
-
-        # с помощью assert проверяем, что ожидаемый текст совпадает с текстом на странице сайта
-        self.assertEqual("Congratulations! You have successfully registered!" , welcome_text)
+        welcome_text_elt = browser.find_element_by_tag_name("h1").text
+        self.assertEqual("Congratulations! You have successfully registered!", welcome_text_elt)
 
     def test2(self):
         browser.get("http://suninjuly.github.io/registration2.html")
-        input1 = browser.find_element_by_xpath('//div[@class="first_block"]/div[@class="form-group first_class"]/input')
-        input1.send_keys("Vitaly")
-        input2 = browser.find_element_by_xpath('//div[@class="first_block"]/div[@class="form-group second_class"]/input')
-        input2.send_keys("Nepochatyh")
-        input3 = browser.find_element_by_xpath('//div[@class="first_block"]/div[@class="form-group third_class"]/input')
-        input3.send_keys("leedno@gmail.com")
-        input4 = browser.find_element_by_xpath('//div[@class="second_block"]/div[@class="form-group first_class"]/input')
-        input4.send_keys("89099099090")
-        input5 = browser.find_element_by_xpath('//div[@class="second_block"]/div[@class="form-group second_class"]/input')
-        input5.send_keys("ul.Pushkina d.Kolotushkina")
-            # Отправляем заполненную форму
-        button = browser.find_element_by_css_selector("button.btn")
-        button.click()
-
-        # Проверяем, что смогли зарегистрироваться
-        # ждем загрузки страницы
+        browser.find_element_by_xpath('//div[@class="first_block"]/div[@class="form-group first_class"]/input').send_keys("Vitaly")
+        browser.find_element_by_xpath('//div[@class="first_block"]/div[@class="form-group second_class"]/input').send_keys("Nepochatyh")
+        browser.find_element_by_xpath('//div[@class="first_block"]/div[@class="form-group third_class"]/input').send_keys("leedno@gmail.com")
+        browser.find_element_by_xpath('//div[@class="second_block"]/div[@class="form-group first_class"]/input').send_keys("89099099090")
+        browser.find_element_by_xpath('//div[@class="second_block"]/div[@class="form-group second_class"]/input').send_keys("ul.Pushkina d.Kolotushkina")
+        browser.find_element_by_css_selector("button.btn").click()
         time.sleep(1)
-
-        # находим элемент, содержащий текст
-        welcome_text_elt = browser.find_element_by_tag_name("h1")
-        # записываем в переменную welcome_text текст из элемента welcome_text_elt
-        welcome_text = welcome_text_elt.text
-
-        # с помощью assert проверяем, что ожидаемый текст совпадает с текстом на странице сайта
-        self.assertEqual("Congratulations! You have successfully registered!" , welcome_text)
+        welcome_text_elt = browser.find_element_by_tag_name("h1").text
+        self.assertEqual("Congratulations! You have successfully registered!", welcome_text_elt)
 
 if __name__ == "__main__":
     unittest.main()
